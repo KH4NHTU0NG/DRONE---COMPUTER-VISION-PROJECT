@@ -1,0 +1,6 @@
+adafruit-blinka>=8.0.0
+adafruit-circuitpython-mlx90640>=1.0.0
+numpy<2.0.0
+setproctitle
+opencv-python
+python-dotenv

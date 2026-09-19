@@ -1,0 +1,600 @@
+[2026-07-17 20:07:49] [INFO] Initializing SAR System...
+[2026-07-17 20:09:05] [INFO] Initializing SAR System...
+[2026-07-17 20:09:06] [INFO] Starting Thermal Camera
+[2026-07-17 20:09:06] [INFO] Starting Detection Pipeline
+[2026-07-17 20:10:27] [INFO] Stopping...
+[2026-07-17 20:11:43] [INFO] Initializing SAR System...
+[2026-07-17 20:11:43] [INFO] Starting Thermal Camera
+[2026-07-17 20:11:43] [INFO] Starting Detection Pipeline
+[2026-07-17 20:22:25] [INFO] Initializing SAR System...
+[2026-07-17 20:22:25] [INFO] Starting Thermal Camera
+[2026-07-17 20:22:25] [INFO] Starting Detection Pipeline
+[2026-07-17 20:24:14] [INFO] Stopping...
+[2026-07-18 23:41:43] [INFO] Initializing SAR System...
+[2026-07-18 23:41:45] [INFO] Starting Thermal Camera
+[2026-07-18 23:41:45] [INFO] Starting Detection Pipeline
+[2026-07-18 23:42:04] [INFO] Stopping...
+[2026-07-18 23:42:18] [INFO] Initializing SAR System...
+[2026-07-18 23:42:18] [INFO] Starting Thermal Camera
+[2026-07-18 23:42:18] [INFO] Starting Detection Pipeline
+[2026-07-18 23:43:06] [INFO] Stopping...
+[2026-07-18 23:44:54] [INFO] Initializing SAR System...
+[2026-07-18 23:44:54] [INFO] Starting Thermal Camera
+[2026-07-18 23:44:54] [INFO] Starting Detection Pipeline
+[2026-07-18 23:45:18] [INFO] Stopping...
+[2026-07-18 23:47:03] [INFO] Initializing SAR System...
+[2026-07-18 23:47:03] [INFO] Starting Thermal Camera
+[2026-07-18 23:47:03] [INFO] Starting Detection Pipeline
+[2026-07-18 23:47:29] [INFO] Stopping...
+[2026-07-18 23:49:27] [INFO] Initializing SAR System...
+[2026-07-18 23:49:27] [INFO] Starting Thermal Camera
+[2026-07-18 23:49:27] [INFO] Starting Detection Pipeline
+[2026-07-18 23:51:37] [INFO] Initializing SAR System...
+[2026-07-18 23:51:37] [INFO] Starting Thermal Camera
+[2026-07-18 23:51:37] [INFO] Starting Detection Pipeline
+[2026-07-18 23:55:06] [INFO] Initializing SAR System...
+[2026-07-18 23:55:08] [INFO] Starting Thermal Camera
+[2026-07-18 23:55:08] [INFO] Starting Detection Pipeline
+[2026-07-19 00:01:04] [INFO] Initializing SAR System...
+[2026-07-19 00:02:37] [INFO] Initializing SAR System...
+[2026-07-19 00:02:37] [INFO] Starting Thermal Camera
+[2026-07-19 00:02:37] [INFO] Starting Detection Pipeline
+[2026-07-19 00:10:28] [INFO] Initializing SAR System...
+[2026-07-19 00:12:21] [INFO] Initializing SAR System...
+[2026-07-19 00:12:21] [INFO] Starting Thermal Camera
+[2026-07-19 00:12:21] [INFO] Starting Detection Pipeline
+[2026-07-19 00:18:42] [INFO] Initializing SAR System...
+[2026-07-19 00:18:43] [INFO] Starting Thermal Camera
+[2026-07-19 00:18:43] [INFO] Starting Detection Pipeline
+[2026-07-19 00:23:02] [INFO] Initializing SAR System...
+[2026-07-19 00:23:03] [INFO] Starting Thermal Camera
+[2026-07-19 00:23:03] [INFO] Starting Detection Pipeline
+[2026-07-19 00:24:03] [INFO] Initializing SAR System...
+[2026-07-19 00:24:04] [INFO] Starting Thermal Camera
+[2026-07-19 00:24:04] [INFO] Starting Detection Pipeline
+[2026-07-19 00:27:30] [INFO] Initializing SAR System...
+[2026-07-19 00:27:30] [INFO] Starting Thermal Camera
+[2026-07-19 00:27:30] [INFO] Starting Detection Pipeline
+[2026-07-19 00:34:14] [INFO] Initializing SAR System...
+[2026-07-19 00:34:15] [INFO] Starting Thermal Camera
+[2026-07-19 00:34:15] [INFO] Starting Detection Pipeline
+[2026-07-19 00:36:10] [INFO] Initializing SAR System...
+[2026-07-19 00:36:11] [INFO] Starting Thermal Camera
+[2026-07-19 00:36:11] [INFO] Starting Detection Pipeline
+[2026-07-19 00:40:02] [INFO] Initializing SAR System...
+[2026-07-19 00:40:03] [INFO] Starting Thermal Camera
+[2026-07-19 00:40:03] [INFO] Starting Detection Pipeline
+[2026-07-19 00:41:40] [INFO] Initializing SAR System...
+[2026-07-19 00:41:40] [INFO] Starting Thermal Camera
+[2026-07-19 00:41:40] [INFO] Starting Detection Pipeline
+[2026-07-19 00:43:36] [INFO] Initializing SAR System...
+[2026-07-19 00:43:37] [INFO] Starting Thermal Camera
+[2026-07-19 00:43:37] [INFO] Starting Detection Pipeline
+[2026-07-19 00:45:37] [INFO] Initializing SAR System...
+[2026-07-19 00:45:38] [INFO] Starting Thermal Camera
+[2026-07-19 00:45:38] [INFO] Starting Detection Pipeline
+[2026-07-19 00:50:02] [INFO] Initializing SAR System...
+[2026-07-19 00:50:02] [INFO] Starting Thermal Camera
+[2026-07-19 00:50:02] [INFO] Starting Detection Pipeline
+[2026-07-19 00:51:07] [INFO] Initializing SAR System...
+[2026-07-19 00:51:07] [INFO] Starting Thermal Camera
+[2026-07-19 00:51:07] [INFO] Starting Detection Pipeline
+[2026-07-19 00:52:06] [INFO] Initializing SAR System...
+[2026-07-19 00:52:07] [INFO] Starting Thermal Camera
+[2026-07-19 00:52:07] [INFO] Starting Detection Pipeline
+[2026-07-19 00:52:18] [INFO] Stopping...
+[2026-07-19 00:52:57] [INFO] Initializing SAR System...
+[2026-07-19 00:52:58] [INFO] Starting Thermal Camera
+[2026-07-19 00:52:58] [INFO] Starting Detection Pipeline
+[2026-07-19 00:53:04] [INFO] Stopping...
+[2026-07-19 00:53:29] [INFO] Initializing SAR System...
+[2026-07-19 00:53:30] [INFO] Starting Thermal Camera
+[2026-07-19 00:53:30] [INFO] Starting Detection Pipeline
+[2026-07-19 09:12:21] [INFO] Initializing SAR System...
+[2026-07-19 09:12:22] [INFO] Starting Thermal Camera
+[2026-07-19 09:12:22] [INFO] Starting Detection Pipeline
+[2026-07-19 09:13:32] [INFO] Initializing SAR System...
+[2026-07-19 09:13:32] [INFO] Starting Thermal Camera
+[2026-07-19 09:13:32] [INFO] Starting Detection Pipeline
+[2026-07-19 09:14:23] [INFO] Initializing SAR System...
+[2026-07-19 09:14:23] [INFO] Starting Thermal Camera
+[2026-07-19 09:14:23] [INFO] Starting Detection Pipeline
+[2026-07-19 09:14:49] [INFO] Initializing SAR System...
+[2026-07-19 09:14:49] [INFO] Starting Thermal Camera
+[2026-07-19 09:14:49] [INFO] Starting Detection Pipeline
+[2026-07-19 09:16:27] [INFO] Initializing SAR System...
+[2026-07-19 09:16:27] [INFO] Starting Thermal Camera
+[2026-07-19 09:16:27] [INFO] Starting Detection Pipeline
+[2026-07-19 09:16:58] [INFO] Initializing SAR System...
+[2026-07-19 09:16:59] [INFO] Starting Thermal Camera
+[2026-07-19 09:16:59] [INFO] Starting Detection Pipeline
+[2026-07-19 09:19:09] [INFO] Initializing SAR System...
+[2026-07-19 09:19:12] [INFO] Starting Thermal Camera
+[2026-07-19 09:19:12] [INFO] Starting Detection Pipeline
+[2026-07-19 09:30:33] [INFO] Initializing SAR System...
+[2026-07-19 09:30:33] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:30:33] [INFO] Starting Thermal Camera
+[2026-07-19 09:30:33] [INFO] Starting Detection Pipeline
+[2026-07-19 09:31:43] [INFO] Initializing SAR System...
+[2026-07-19 09:36:33] [INFO] Initializing SAR System...
+[2026-07-19 09:36:33] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 09:36:33] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:36:33] [INFO] Starting Thermal Camera
+[2026-07-19 09:36:33] [INFO] Starting Detection Pipeline
+[2026-07-19 09:38:55] [INFO] Initializing SAR System...
+[2026-07-19 09:38:55] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 09:38:56] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:38:56] [INFO] Starting Thermal Camera
+[2026-07-19 09:38:56] [INFO] Starting Detection Pipeline
+[2026-07-19 09:39:34] [INFO] Initializing SAR System...
+[2026-07-19 09:39:34] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:39:34] [INFO] Starting Thermal Camera
+[2026-07-19 09:39:34] [INFO] Starting Detection Pipeline
+[2026-07-19 09:42:46] [INFO] Initializing SAR System...
+[2026-07-19 09:42:47] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:42:47] [INFO] Starting Thermal Camera
+[2026-07-19 09:42:47] [INFO] Starting Detection Pipeline
+[2026-07-19 09:47:36] [INFO] Initializing SAR System...
+[2026-07-19 09:47:37] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:47:37] [INFO] Starting Thermal Camera
+[2026-07-19 09:47:37] [INFO] Starting Detection Pipeline
+[2026-07-19 09:49:33] [INFO] Initializing SAR System...
+[2026-07-19 09:49:33] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 09:50:23] [INFO] Initializing SAR System...
+[2026-07-19 09:50:23] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 09:51:11] [INFO] Initializing SAR System...
+[2026-07-19 09:51:19] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:51:19] [INFO] Starting Thermal Camera
+[2026-07-19 09:51:19] [INFO] Starting Detection Pipeline
+[2026-07-19 09:51:32] [INFO] Stopping...
+[2026-07-19 09:51:34] [INFO] Initializing SAR System...
+[2026-07-19 09:51:35] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:51:35] [INFO] Starting Thermal Camera
+[2026-07-19 09:51:35] [INFO] Starting Detection Pipeline
+[2026-07-19 09:52:26] [INFO] Initializing SAR System...
+[2026-07-19 09:52:26] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 09:52:27] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:52:27] [INFO] Starting Thermal Camera
+[2026-07-19 09:52:27] [INFO] Starting Detection Pipeline
+[2026-07-19 09:54:00] [INFO] Initializing SAR System...
+[2026-07-19 09:54:00] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:54:00] [INFO] Starting Thermal Camera
+[2026-07-19 09:54:00] [INFO] Starting Detection Pipeline
+[2026-07-19 09:56:48] [INFO] Initializing SAR System...
+[2026-07-19 09:56:49] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:56:49] [INFO] Starting Thermal Camera
+[2026-07-19 09:56:49] [INFO] Starting Detection Pipeline
+[2026-07-19 09:57:17] [INFO] Initializing SAR System...
+[2026-07-19 09:57:17] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 09:57:17] [INFO] Starting Thermal Camera
+[2026-07-19 09:57:17] [INFO] Starting Detection Pipeline
+[2026-07-19 09:57:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:20] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:42] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:43] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:44] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:47] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:52] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:56] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:57:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:01] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:02] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:02] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:03] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:04] [WARNING] Thermal read error: Too many retries
+[2026-07-19 09:58:05] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:07] [INFO] Initializing SAR System...
+[2026-07-19 10:02:08] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 10:02:08] [INFO] Starting Thermal Camera
+[2026-07-19 10:02:08] [INFO] Starting Detection Pipeline
+[2026-07-19 10:02:09] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:09] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:10] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:11] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:13] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:20] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:42] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:43] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:43] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:44] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:47] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:52] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:56] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:02:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:03:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:03:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:11] [INFO] Initializing SAR System...
+[2026-07-19 10:07:12] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 10:07:12] [INFO] Starting Thermal Camera
+[2026-07-19 10:07:12] [INFO] Starting Detection Pipeline
+[2026-07-19 10:07:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:20] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 10:07:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:45] [INFO] Initializing SAR System...
+[2026-07-19 21:04:45] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:04:46] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:04:46] [INFO] Starting Thermal Camera
+[2026-07-19 21:04:46] [INFO] Starting Detection Pipeline
+[2026-07-19 21:04:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:04:56] [INFO] Stopping...
+[2026-07-19 21:04:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:45] [INFO] Initializing SAR System...
+[2026-07-19 21:06:45] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:06:46] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:06:46] [INFO] Starting Thermal Camera
+[2026-07-19 21:06:46] [INFO] Starting Detection Pipeline
+[2026-07-19 21:06:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:06:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:02] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:03] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:04] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:05] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:07] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:08] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:09] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:10] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:13] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:07:42] [INFO] Stopping...
+[2026-07-19 21:07:42] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:13] [INFO] Initializing SAR System...
+[2026-07-19 21:11:13] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:11:13] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:11:13] [INFO] Starting Thermal Camera
+[2026-07-19 21:11:13] [INFO] Starting Detection Pipeline
+[2026-07-19 21:11:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:11:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:19:08] [INFO] Initializing SAR System...
+[2026-07-19 21:19:09] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:19:09] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:19:09] [INFO] Starting Thermal Camera
+[2026-07-19 21:19:09] [INFO] Starting Detection Pipeline
+[2026-07-19 21:19:30] [INFO] Initializing SAR System...
+[2026-07-19 21:19:30] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:19:31] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:19:31] [INFO] Starting Thermal Camera
+[2026-07-19 21:19:31] [INFO] Starting Detection Pipeline
+[2026-07-19 21:21:47] [INFO] Initializing SAR System...
+[2026-07-19 21:21:47] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:21:47] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:21:47] [INFO] Starting Thermal Camera
+[2026-07-19 21:21:47] [INFO] Starting Detection Pipeline
+[2026-07-19 21:21:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:52] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:56] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:21:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:01] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:02] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:03] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:04] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:06] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:07] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:08] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:10] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:11] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:13] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:20] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:22:42] [INFO] Stopping...
+[2026-07-19 21:22:43] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:41] [INFO] Initializing SAR System...
+[2026-07-19 21:24:41] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:24:42] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:24:42] [INFO] Starting Thermal Camera
+[2026-07-19 21:24:42] [INFO] Starting Detection Pipeline
+[2026-07-19 21:24:42] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:44] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:56] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:24:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:25:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:25:01] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:25:02] [INFO] Stopping...
+[2026-07-19 21:26:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:43] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:44] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:47] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:48] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:52] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:53] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:58] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:26:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:02] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:03] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:04] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:06] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:07] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:08] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:09] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:11] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:12] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:13] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:17] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:21] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:26] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:31] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:36] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:40] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:42] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:44] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:45] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:46] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:47] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:49] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:50] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:51] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:52] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:54] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:55] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:56] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:57] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:27:59] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:00] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:01] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:03] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:04] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:05] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:06] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:08] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:09] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:10] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:11] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:13] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:14] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:15] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:16] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:18] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:19] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:20] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:22] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:23] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:24] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:25] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:27] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:28] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:29] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:30] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:32] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:33] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:34] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:35] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:37] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:38] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:39] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:28:41] [WARNING] Thermal read error: Too many retries
+[2026-07-19 21:35:51] [INFO] Initializing SAR System...
+[2026-07-19 21:35:51] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:35:52] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:35:52] [INFO] Starting Thermal Camera
+[2026-07-19 21:35:52] [INFO] Starting Detection Pipeline
+[2026-07-19 21:36:02] [INFO] Stopping...
+[2026-07-19 21:37:41] [INFO] Initializing SAR System...
+[2026-07-19 21:37:41] [INFO] Không phát hiện màn hình (DISPLAY trống) -> chạy headless. Xem video qua MJPEG stream (http://<IP-Pi>:5000).
+[2026-07-19 21:37:41] [INFO] Stream server started: http://<IP-Pi>:5000
+[2026-07-19 21:37:41] [INFO] Starting Thermal Camera
+[2026-07-19 21:37:41] [INFO] Starting Detection Pipeline
+[2026-07-19 21:44:24] [INFO] Stopping...
