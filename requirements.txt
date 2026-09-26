@@ -1,7 +1,9 @@
 adafruit-blinka>=8.0.0
 adafruit-circuitpython-mlx90640>=1.0.0
-numpy<2.0.0
+numpy
 setproctitle
 opencv-python
 python-dotenv
 flask>=2.0.0
+ultralytics>=8.0.0
+pytest

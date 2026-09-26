@@ -18,7 +18,7 @@ def main():
 
     if not HAS_THERMAL_HARDWARE:
         print("[LỖI] Thư viện adafruit_mlx90640 hoặc board không khả dụng trên máy này.")
-        print("Vui lòng chạy script này trực tiếp trên Raspberry Pi 5.")
+        print("Vui lòng chạy script này trực tiếp trên NVIDIA Jetson Orin Nano.")
         sys.exit(1)
 
     print(f"[*] Cấu hình I2C Clock: {config.thermal.i2c_frequency} Hz")
@@ -47,8 +47,8 @@ def main():
         print(f"\n[LỖI PHẦN CỨNG] Không thể giao tiếp với MLX90640: {exc}")
         print("Khuyến nghị:")
         print("1. Kiểm tra kết nối chân SDA, SCL, 3.3V, GND.")
-        print("2. Chạy 'i2cdetect -y 1' xem địa chỉ 0x33 có xuất hiện không.")
-        print("3. Đảm bảo dtparam=i2c_arm_baudrate=10000 trong /boot/firmware/config.txt.")
+        print("2. Chạy 'i2cdetect -y -r 1' xem địa chỉ 0x33 có xuất hiện không.")
+        print("3. Đảm bảo chân Pin 3 (SDA), Pin 5 (SCL) trên 40-pin header của Jetson.")
     finally:
         try:
             cam.stop()
