@@ -31,39 +31,54 @@ class DisplayManager:
 
         if sys.platform == "darwin":
             self.headless = os.environ.get("HEADLESS", "0").lower() in ("1", "true", "yes")
+            if threading.current_thread() is not threading.main_thread():
+                self.headless = True
         else:
             self.headless = not os.environ.get("DISPLAY")
 
         if self.headless:
             logger.info(
                 "Chạy chế độ headless (không mở cửa sổ GUI trực tiếp). "
-                "Xem video qua MJPEG stream (http://localhost:5000)."
+                "Xem video qua MJPEG stream (http://localhost:5001)."
             )
         else:
-            cv2.namedWindow(
-                self.window_name,
-                cv2.WINDOW_NORMAL
-            )
+            try:
+                cv2.namedWindow(
+                    self.window_name,
+                    cv2.WINDOW_NORMAL
+                )
+            except Exception:
+                self.headless = True
 
     def show(self, frame):
         if self.headless or frame is None:
             return
-        cv2.imshow(
-            self.window_name,
-            frame
-        )
-        if not self._resized:
-            cv2.resizeWindow(
+        if threading.current_thread() is not threading.main_thread():
+            return
+        try:
+            cv2.imshow(
                 self.window_name,
-                self._target_width,
-                self._target_height
+                frame
             )
-            self._resized = True
+            if not self._resized:
+                cv2.resizeWindow(
+                    self.window_name,
+                    self._target_width,
+                    self._target_height
+                )
+                self._resized = True
+        except Exception as e:
+            logger.warning(f"Display error: {e}")
 
     def wait_key(self, delay: int = 1):
         if self.headless:
             return 0xFF
-        return cv2.waitKey(delay) & 0xFF
+        if threading.current_thread() is not threading.main_thread():
+            return 0xFF
+        try:
+            return cv2.waitKey(delay) & 0xFF
+        except Exception:
+            return 0xFF
 
     def should_close(self):
         if self.headless:
@@ -78,19 +93,24 @@ class DisplayManager:
     def toggle_fullscreen(self):
         if self.headless:
             return
-        self._fullscreen = not self._fullscreen
-        if self._fullscreen:
-            cv2.setWindowProperty(
-                self.window_name,
-                cv2.WND_PROP_FULLSCREEN,
-                cv2.WINDOW_FULLSCREEN
-            )
-        else:
-            cv2.setWindowProperty(
-                self.window_name,
-                cv2.WND_PROP_FULLSCREEN,
-                cv2.WINDOW_NORMAL
-            )
+        if threading.current_thread() is not threading.main_thread():
+            return
+        try:
+            self._fullscreen = not self._fullscreen
+            if self._fullscreen:
+                cv2.setWindowProperty(
+                    self.window_name,
+                    cv2.WND_PROP_FULLSCREEN,
+                    cv2.WINDOW_FULLSCREEN
+                )
+            else:
+                cv2.setWindowProperty(
+                    self.window_name,
+                    cv2.WND_PROP_FULLSCREEN,
+                    cv2.WINDOW_NORMAL
+                )
+        except Exception:
+            pass
 
     def resize(
         self,
@@ -99,18 +119,28 @@ class DisplayManager:
     ):
         if self.headless:
             return
-        cv2.resizeWindow(
-            self.window_name,
-            width,
-            height
-        )
+        if threading.current_thread() is not threading.main_thread():
+            return
+        try:
+            cv2.resizeWindow(
+                self.window_name,
+                width,
+                height
+            )
+        except Exception:
+            pass
 
     def destroy(self):
         if self.headless:
             return
-        cv2.destroyWindow(
-            self.window_name
-        )
+        if threading.current_thread() is not threading.main_thread():
+            return
+        try:
+            cv2.destroyWindow(
+                self.window_name
+            )
+        except Exception:
+            pass
 
     def close(self):
         self.destroy()
