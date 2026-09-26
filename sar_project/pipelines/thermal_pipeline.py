@@ -16,9 +16,14 @@ from config import config
 class ThermalPipeline:
     def __init__(self):
         self.enabled = config.thermal.enable
-        # Chỉ khởi tạo phần cứng (mở bus I2C) khi cấu hình bật thermal,
-        # tránh crash trên máy chưa cắm cảm biến MLX90640.
-        self.camera = ThermalCamera() if self.enabled else None
+        # Chỉ khởi tạo phần cứng (mở bus I2C) khi cấu hình bật thermal và phần cứng khả dụng,
+        # tránh crash trên máy chưa cắm cảm biến MLX90640 hoặc môi trường test.
+        self.camera = None
+        if self.enabled:
+            try:
+                self.camera = ThermalCamera()
+            except Exception:
+                self.camera = None
         self.frame = None
         self.heatmap = None
 
@@ -55,12 +60,13 @@ class ThermalPipeline:
     def normalize(self):
         if self.frame is None:
             return None
-        image = cv2.normalize(
-            self.frame,
-            None, 0, 255,
-            cv2.NORM_MINMAX
-        )
-        return image.astype(np.uint8)
+        t_min = config.thermal.min_temperature
+        t_max = config.thermal.max_temperature
+        if t_max <= t_min:
+            t_max = t_min + 1.0
+        clipped = np.clip(self.frame, t_min, t_max)
+        norm = ((clipped - t_min) / (t_max - t_min) * 255.0).astype(np.uint8)
+        return norm
 
     def generate_heatmap(self):
         image = self.normalize()

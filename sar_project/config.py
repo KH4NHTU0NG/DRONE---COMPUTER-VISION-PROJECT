@@ -55,8 +55,9 @@ class ThermalConfig:
     enable: bool = True
     sensor: str = "MLX90640"
     refresh_rate: int = 16
+    i2c_frequency: int = 100000
     min_temperature: float = 20.0
-    max_temperature: float = 80.0
+    max_temperature: float = 45.0
     interpolation: int = 10
 
 # =========================================================
@@ -104,6 +105,7 @@ class PerformanceConfig:
     detection_queue_size: int = 3
     render_queue_size: int = 3
     worker_threads: int = 2
+    stream_port: int = 5000
 
 # =========================================================
 # APPLICATION CONFIGURATION

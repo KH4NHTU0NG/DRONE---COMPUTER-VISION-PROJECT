@@ -7,9 +7,14 @@ Convert Hailo Detection -> Detection Object
 
 from typing import List
 
-import hailo
+try:
+    import hailo
+    from hailo_apps.python.core.gstreamer.gstreamer_app import app_callback_class
+except (ImportError, ModuleNotFoundError):
+    hailo = None
 
-from hailo_apps.python.core.gstreamer.gstreamer_app import app_callback_class
+    class app_callback_class:
+        pass
 
 from core.detection import Detection, BoundingBox
 from config import config
@@ -41,15 +46,20 @@ class DetectionCallback(app_callback_class):
 
             if len(unique_ids) == 1:
                 track_id = unique_ids[0].get_id()
+            x1 = max(0.0, float(bbox.xmin()) * frame_width)
+            y1 = max(0.0, float(bbox.ymin()) * frame_height)
+            x2 = min(float(frame_width), float(bbox.xmax()) * frame_width)
+            y2 = min(float(frame_height), float(bbox.ymax()) * frame_height)
+
             detection = Detection(
                 class_id=det.get_class_id(),
                 label=label,
                 confidence=confidence,
                 bbox=BoundingBox(
-                    x1=bbox.xmin() * frame_width,
-                    y1=bbox.ymin() * frame_height,
-                    x2=bbox.xmax() * frame_width,
-                    y2=bbox.ymax() * frame_height
+                    x1=x1,
+                    y1=y1,
+                    x2=x2,
+                    y2=y2
                 ),
                 track_id=track_id
             )

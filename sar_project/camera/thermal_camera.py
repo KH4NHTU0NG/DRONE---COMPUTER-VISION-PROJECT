@@ -10,26 +10,50 @@ from __future__ import annotations
 import threading
 import time
 import numpy as np
-import board
-import busio
-import adafruit_mlx90640
+try:
+    import board
+    import busio
+    import adafruit_mlx90640
+    HAS_THERMAL_HARDWARE = True
+except (ImportError, NotImplementedError):
+    HAS_THERMAL_HARDWARE = False
+    board = None
+    busio = None
+    adafruit_mlx90640 = None
 
+from config import config
 from core.logger import logger
+
+_REFRESH_RATE_MAP = {}
+if HAS_THERMAL_HARDWARE:
+    _REFRESH_RATE_MAP = {
+        1: adafruit_mlx90640.RefreshRate.REFRESH_1_HZ,
+        2: adafruit_mlx90640.RefreshRate.REFRESH_2_HZ,
+        4: adafruit_mlx90640.RefreshRate.REFRESH_4_HZ,
+        8: adafruit_mlx90640.RefreshRate.REFRESH_8_HZ,
+        16: adafruit_mlx90640.RefreshRate.REFRESH_16_HZ,
+        32: adafruit_mlx90640.RefreshRate.REFRESH_32_HZ,
+    }
 
 
 class ThermalCamera:
     def __init__(self):
+        if not HAS_THERMAL_HARDWARE:
+            raise RuntimeError("MLX90640 / board hardware libraries are not supported on this platform.")
+        freq = getattr(config.thermal, "i2c_frequency", 100000)
         self._i2c = busio.I2C(
             board.SCL,
             board.SDA,
-            frequency=800000
+            frequency=freq
         )
         self._camera = adafruit_mlx90640.MLX90640(
             self._i2c
         )
-        self._camera.refresh_rate = (
-            adafruit_mlx90640.RefreshRate.REFRESH_16_HZ
+        rate = _REFRESH_RATE_MAP.get(
+            config.thermal.refresh_rate,
+            adafruit_mlx90640.RefreshRate.REFRESH_8_HZ
         )
+        self._camera.refresh_rate = rate
         self._raw_frame = np.zeros(
             (24 * 32,),
             dtype=np.float32

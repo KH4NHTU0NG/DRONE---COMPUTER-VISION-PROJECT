@@ -37,3 +37,4 @@ class Detection:
     priority_rank: int | None = None
     obstacle_score: float | None = None
     safe: bool | None = None
+    thermal_verified: bool = False
