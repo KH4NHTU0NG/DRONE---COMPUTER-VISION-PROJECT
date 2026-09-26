@@ -1,99 +1,84 @@
-# SAR Project — Search And Rescue System (NVIDIA Jetson Orin Nano Edition)
+# SAR Project — Search And Rescue System (macOS & iPhone Camera Edition)
 
-He thong phat hien nan nhan va cuu ho thoi gian thuc tren Drone/Thiet bi di dong, toi uu hoa phan cung chuyen biet cho **NVIDIA Jetson Orin Nano (4GB / 8GB)**. Tan dung kien truc **NVIDIA Ampere GPU (512 - 1024 CUDA Cores, 32 Tensor Cores)** voi bo tang toc **TensorRT FP16**, ket hop camera CSI toc do cao qua ISP phan cung va cam bien nhiet hong ngoai **MLX90640**.
-
----
-
-## 1. Tinh Nang Chinh Tren Jetson Orin Nano
-
-- **Tang toc AI TensorRT FP16:** Chay mo hinh YOLOv8 tren Tensor Cores cua Jetson Orin Nano voi thong luong cuc cao (60 - 100+ FPS).
-- **Zero-Copy GStreamer Hardware Acceleration:** Thu nhan luong camera CSI truc tiep qua `nvarguscamerasrc` va bo nho phan cung `NVMM`, khong tieu ton tai nguyen CPU.
-- **Cross-Modal Thermal Verification:** Tu dong kiem chung cheo dau hieu sinh ton nhiet nguoi (30°C - 39°C) qua cam bien MLX90640, nang cao do nhay phat hien nguoi tu xa hoac bi che khuat.
-- **Tinh diem uu tien cuu nan (Triage Scoring):** Danh gia tinh trang ha than nhiet (Hypothermia), khoang cach quang hoc va do an toan vat can.
-- **Kien truc da nhan bat dong bo (Multi-Core Ring Queue):** Tach biet luong AI va luong Render/Web Stream, duy tri video muot ma khong bao gio bi nghen mang.
+Hệ thống phát hiện nạn nhân cứu hộ thời gian thực chạy trực tiếp (local) trên **máy Mac** (tối ưu hóa cho Apple Silicon M1/M2/M3/M4 qua **Metal Performance Shaders - MPS** hoặc Intel CPU), kết nối nguồn hình ảnh trực tiếp từ **Camera iPhone** (thông qua tính năng Apple Continuity Camera hoặc IP Webcam Stream).
 
 ---
 
-## 2. Phan Cung Yeu Cau
+## 1. Tính Năng Nổi Bật Trên Nhánh macOS + iPhone
 
-| Thiet bi | Thong so ky thuat | Ghi chu |
-|---|---|---|
-| **Board chinh** | NVIDIA Jetson Orin Nano Developer Kit (4GB hoac 8GB) | Ampere GPU, 6-core ARM Cortex-A78AE |
-| **Nguon dien** | 9V - 20V DC (khuyen nghi 19V / 45W hoac pin drone 5V/3A) | Bat buoc de chay che do MAXN 15W |
-| **Camera RGB** | Camera CSI (IMX219 / IMX477) hoac USB Webcam | Ket noi cong CAM0/CAM1 qua cap ribbon |
-| **Cam bien nhiet** | MLX90640 Thermal Sensor (32 x 24) | Giao tiep qua bus I2C-1 (Pin 3 & Pin 5) |
-| **Luu tru** | M.2 NVMe SSD (128GB+) | JetPack 5.1.2 hoac JetPack 6.0 LTS |
-
----
-
-## 3. So Do Dau Day Cam Bien Nhiet MLX90640 (40-Pin Header)
-
-| Chan MLX90640 | Chan 40-Pin Jetson Orin Nano | Ten Tin Hieu |
-|---|---|---|
-| **VIN / VCC** | **Pin 1** hoac **Pin 17** | 3.3V Power |
-| **GND** | **Pin 6**, **Pin 9** hoac **Pin 14** | Ground |
-| **SDA** | **Pin 3** | I2C1_SDA (Bus 1) |
-| **SCL** | **Pin 5** | I2C1_SCL (Bus 1) |
-
-> Cam bien MLX90640 tren Jetson chay o tan so Fast-Mode **400 kHz** rat on dinh, khong bi loi clock-stretching.
+- **Kết nối Camera iPhone liền mạch (Apple Continuity Camera):**
+  - Tự động nhận diện iPhone được kết nối với máy Mac (cả qua Wi-Fi lẫn cáp USB Lightning/Type-C) thông qua backend `AVFoundation`.
+  - Hỗ trợ độ phân giải linh hoạt (720p, 1080p, 4K) với luồng thu hình đa luồng (Multi-threaded Zero-Lag Ring Buffer) không gây giật lag.
+  - Tự động fallback sang Webcam tích hợp của MacBook nếu iPhone tạm thời mất kết nối.
+  - Hỗ trợ luồng RTSP / HTTP Video Stream từ các app như Camo, DroidCam hoặc IP Webcam.
+- **Tăng tốc suy luận AI trên Apple Silicon GPU (MPS):**
+  - Tận dụng lõi GPU Apple Metal thông qua PyTorch MPS (`device="mps"`), mang lại tốc độ suy luận mô hình YOLOv8 mượt mà (30 - 60+ FPS) ngay trên máy tính xách tay.
+- **Xem trực tiếp trên giao diện Desktop & Web Browser:**
+  - Hiển thị trực tiếp qua cửa sổ OpenCV Quartz/Cocoa trên màn hình Mac.
+  - Tích hợp máy chủ phát luồng Web MJPEG độc lập tại cổng `5001` (`http://localhost:5001`), tránh xung đột với dịch vụ AirPlay Receiver của macOS.
+- **Triage Scoring & Tracking:**
+  - Phân tích bounding box, độ tin cậy và theo dõi nạn nhân thời gian thực.
+  - Khung kiến trúc sẵn sàng kết hợp cảm biến nhiệt khi kết nối ngoại vi.
 
 ---
 
-## 4. Cai Dat Moi Truong Tren Jetson
+## 2. Hướng Dẫn Kết Nối Camera iPhone Với Máy Mac
 
-### Buoc 1: Kich hoat che do cong suat toi da (MAXN 15W) & Khoa xung
+### Cách 1: Sử dụng Apple Continuity Camera (Khuyến nghị - Nhanh nhất)
+1. Đảm bảo iPhone và máy Mac:
+   - Đăng nhập cùng một tài khoản Apple ID.
+   - Bật cả Wi-Fi và Bluetooth trên cả 2 thiết bị (hoặc cắm dây cáp USB từ iPhone vào máy Mac để có độ trễ thấp nhất).
+   - Trên iPhone: Vào **Cài đặt (Settings) > Cài đặt chung (General) > AirPlay & Handoff > Bật "Camera thông suốt" (Continuity Camera)**.
+2. Đặt iPhone gần máy Mac (hoặc gắn lên giá đỡ màn hình).
+3. Hệ thống sẽ tự động quét và kết nối với camera iPhone (thường là index `1`).
+
+### Cách 2: Sử dụng Ứng dụng IP Webcam / RTSP
+Nếu muốn dùng app truyền hình ảnh qua mạng nội bộ:
+1. Mở app IP Camera trên iPhone (ví dụ: *Live-Reporter*, *DroidCam*, *IP Webcam*).
+2. Lấy địa chỉ IP và cổng hiển thị trên app (ví dụ: `http://192.168.1.50:8080/video`).
+3. Mở [config.py](file:///Users/trankhanhtuong/Desktop/drone/config.py) và cấu hình:
+   ```python
+   config.camera.stream_url = "http://192.168.1.50:8080/video"
+   ```
+
+---
+
+## 3. Cài Đặt Môi Trường Trên Máy Mac
+
+### Bước 1: Kích hoạt môi trường Python (Python 3.10+)
 ```bash
-sudo nvpmodel -m 0
-sudo jetson_clocks
+cd ~/Desktop/drone
+# Nếu sử dụng venv:
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### Buoc 2: Cai dat dependencies
+### Bước 2: Cài đặt dependencies
 ```bash
-cd ~/drone
-pip3 install -r requirements.txt
-```
-
-### Buoc 3: Xuat mo hinh sang TensorRT Engine FP16
-```bash
-yolo export model=yolov8n.pt format=engine half=True device=0
-mkdir -p models
-mv yolov8n.engine models/
-```
-
-### Buoc 4: Kiem tra cam bien nhiet MLX90640
-```bash
-sudo i2cdetect -y -r 1
-python3 test_thermal.py
+pip install -r requirements.txt
 ```
 
 ---
 
-## 5. Khoi Chay Ung Dung
+## 4. Khởi Chạy Ứng Dụng
 
-### 1. Chay voi Camera CSI (Khuyen nghi cho Drone)
+Chạy ứng dụng chính:
 ```bash
 python3 App.py
 ```
 
-### 2. Chay voi Webcam USB
-Chinh `camera.backend = "v4l2"` trong `config.py`, roi chay:
-```bash
-python3 App.py
-```
+- **Cửa sổ hiển thị:** Cửa sổ đồ họa trực quan sẽ mở trên màn hình macOS, hiển thị khung hình từ iPhone kèm bounding box nhận diện người và chỉ số FPS thời gian thực.
+- **Xem qua trình duyệt Web:** Mở trình duyệt bất kỳ (Safari, Chrome) và truy cập:
+  ```text
+  http://localhost:5001
+  ```
+- **Thoát ứng dụng:** Nhấn phím `q` hoặc phím `ESC` trên cửa sổ video, hoặc nhấn `Ctrl + C` trên Terminal.
 
 ---
 
-## 6. Xem Video & Du Lieu Cuu Ho Truc Tiep
+## 5. Chạy Bộ Kiểm Thử Tự Động (Unit Tests)
 
-Mo trinh duyet tren may tinh/dien thoai cung mang:
-```text
-http://<IP-Jetson>:5000
-```
-
----
-
-## 7. Chay Bo Kiem Thu Tu Dong (Unit Tests)
-
+Chạy toàn bộ 15 bài kiểm thử tự động (bao gồm pipeline, iPhone camera module, ring queue và thuật toán SAR):
 ```bash
-PYTHONPATH=. pytest tests/test_sar.py -v
+PYTHONPATH=. pytest tests/ -v
 ```

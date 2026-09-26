@@ -1,9 +1,11 @@
-adafruit-blinka>=8.0.0
-adafruit-circuitpython-mlx90640>=1.0.0
-numpy
-setproctitle
-opencv-python
-python-dotenv
-flask>=2.0.0
+torch>=2.0.0
+torchvision
 ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+flask>=2.0.0
+python-dotenv
 pytest
+# Optional thermal camera hardware libraries (chỉ cần khi kết nối cảm biến MLX90640 trên Jetson/Raspberry Pi):
+# adafruit-blinka>=8.0.0
+# adafruit-circuitpython-mlx90640>=1.0.0

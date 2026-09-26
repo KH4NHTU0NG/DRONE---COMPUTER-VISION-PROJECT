@@ -1,17 +1,22 @@
 """
 =========================================================
-SAR Detection Pipeline for NVIDIA Jetson Orin Nano
-Hardware Accelerated with TensorRT FP16 & GStreamer (nvargus/NVMM)
-Multi-Core Asynchronous Decoupled Ring Queue
+SAR Detection Pipeline for macOS & Local Inference
+Supports:
+- iPhone Continuity Camera / AVFoundation / IP Video Stream
+- Apple Silicon MPS (Metal Performance Shaders) / CPU YOLOv8
+- MJPEG Web Streaming (http://localhost:5000)
+- Multi-Threaded Asynchronous Ring Queue Architecture
 =========================================================
 """
 
 import sys
 import threading
 import time
+from typing import Optional, Union
 import cv2
 import numpy as np
 
+from camera.iphone_camera import IPhoneCamera
 from callbacks.detection_callback import DetectionCallback
 from callbacks.thermal_callback import ThermalCallback
 from callbacks.fusion_callback import FusionCallback
@@ -24,37 +29,6 @@ from core.application_context import ApplicationContext
 from core.fps import FPSCounter
 from core.logger import logger
 from config import config
-
-
-def get_jetson_gstreamer_pipeline(
-    sensor_id: int = 0,
-    capture_width: int = 1280,
-    capture_height: int = 720,
-    framerate: int = 30,
-    flip_method: int = 0
-) -> str:
-    """Tạo chuỗi GStreamer tối ưu cho camera CSI qua ISP Jetson Orin Nano (Zero-Copy NVMM)."""
-    return (
-        f"nvarguscamerasrc sensor-id={sensor_id} ! "
-        f"video/x-raw(memory:NVMM), width=(int){capture_width}, height=(int){capture_height}, "
-        f"format=(string)NV12, framerate=(fraction){framerate}/1 ! "
-        f"nvvidconv flip-method={flip_method} ! "
-        f"video/x-raw, width=(int){capture_width}, height=(int){capture_height}, format=(string)BGRx ! "
-        f"videoconvert ! "
-        f"video/x-raw, format=(string)BGR ! "
-        f"appsink drop=1"
-    )
-
-
-def get_v4l2_pipeline(device_id: int = 0, width: int = 1280, height: int = 720, fps: int = 30) -> str:
-    """Chuỗi GStreamer cho USB Webcam trên Jetson."""
-    return (
-        f"v4l2src device=/dev/video{device_id} ! "
-        f"video/x-raw, width=(int){width}, height=(int){height}, framerate=(fraction){fps}/1 ! "
-        f"videoconvert ! "
-        f"video/x-raw, format=(string)BGR ! "
-        f"appsink drop=1"
-    )
 
 
 class DetectionPipeline:
@@ -72,9 +46,9 @@ class DetectionPipeline:
             height=config.camera.height
         )
         self.fps = FPSCounter()
-        self.cap = None
+        self.cap: Optional[cv2.VideoCapture] = None
+        self.camera_source: Optional[IPhoneCamera] = None
         self._running = False
-        self._capture_thread = None
 
         if config.display.fullscreen:
             self.display.toggle_fullscreen()
@@ -86,77 +60,97 @@ class DetectionPipeline:
         # Khởi chạy luồng render & web stream độc lập
         self._worker_thread = threading.Thread(
             target=self._render_worker_loop,
+            name="RenderWorkerThread",
             daemon=True
         )
         self._worker_thread.start()
 
-    def _open_camera(self) -> cv2.VideoCapture | None:
+    def _open_camera(self) -> bool:
         backend = config.camera.backend.lower()
-        cap = None
 
-        if backend == "nvargus":
-            gst_pipeline = get_jetson_gstreamer_pipeline(
-                sensor_id=config.camera.sensor_id,
-                capture_width=config.camera.width,
-                capture_height=config.camera.height,
-                framerate=config.camera.fps,
-                flip_method=config.camera.flip_method
-            )
-            logger.info(f"Opening Jetson CSI Camera via GStreamer: {gst_pipeline}")
-            cap = cv2.VideoCapture(gst_pipeline, cv2.CAP_GSTREAMER)
-
-        elif backend == "v4l2":
-            gst_pipeline = get_v4l2_pipeline(
+        # 1. iPhone Continuity Camera / macOS AVFoundation / IP Stream
+        if backend in ("iphone", "avfoundation", "mac", "stream", "ip_stream"):
+            logger.info("Opening iPhone Continuity / macOS Camera...")
+            self.camera_source = IPhoneCamera(
                 device_id=config.camera.device_id,
+                stream_url=config.camera.stream_url,
                 width=config.camera.width,
                 height=config.camera.height,
-                fps=config.camera.fps
+                fps=config.camera.fps,
+                flip_method=config.camera.flip_method
             )
-            logger.info(f"Opening V4L2 USB Camera: {gst_pipeline}")
-            cap = cv2.VideoCapture(gst_pipeline, cv2.CAP_GSTREAMER)
-            if not cap.isOpened():
-                cap = cv2.VideoCapture(config.camera.device_id)
+            self.camera_source.start()
+            return True
 
-        if cap is not None and cap.isOpened():
-            logger.info("Camera opened successfully.")
-            return cap
+        # 2. V4L2 USB Camera (nếu cắm trên Linux/Mac)
+        elif backend == "v4l2":
+            dev_id = getattr(config.camera, "device_id", 0)
+            logger.info(f"Opening USB Camera at index {dev_id}...")
+            cap = cv2.VideoCapture(dev_id)
+            if cap.isOpened():
+                cap.set(cv2.CAP_PROP_FRAME_WIDTH, config.camera.width)
+                cap.set(cv2.CAP_PROP_FRAME_HEIGHT, config.camera.height)
+                cap.set(cv2.CAP_PROP_FPS, config.camera.fps)
+                self.cap = cap
+                return True
 
-        logger.warning("No hardware camera opened. Running in offline/simulation mode.")
-        return None
+        # 3. Chế độ mô phỏng / Không có camera phần cứng
+        logger.warning("No hardware camera configured or opened. Running in offline/simulation mode.")
+        return False
 
     def run(self):
-        logger.info("Starting Thermal Camera on Jetson...")
-        self.thermal_pipeline.start()
-        logger.info("Starting AI Detection Pipeline on Jetson Orin Nano...")
+        if config.thermal.enable:
+            logger.info("Starting Thermal Pipeline...")
+            self.thermal_pipeline.start()
+
+        logger.info("Starting AI Detection Pipeline on macOS...")
         self._running = True
-        self.cap = self._open_camera()
+        self._open_camera()
 
         try:
             while self._running and self.context.running:
                 frame = None
-                if self.cap is not None and self.cap.isOpened():
+
+                # Lấy frame từ nguồn camera iPhone
+                if self.camera_source is not None:
+                    ret, frame = self.camera_source.read()
+                    if not ret or frame is None:
+                        time.sleep(0.01)
+                        continue
+                elif self.cap is not None and self.cap.isOpened():
                     ret, frame = self.cap.read()
                     if not ret or frame is None:
                         time.sleep(0.01)
                         continue
                 else:
-                    # Chế độ giả lập khung hình kiểm thử
+                    # Giả lập khung hình test khi không có camera
                     frame = np.zeros((config.camera.height, config.camera.width, 3), dtype=np.uint8)
+                    cv2.putText(
+                        frame,
+                        "SIMULATION MODE - NO CAMERA",
+                        (50, config.camera.height // 2),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1.0,
+                        (0, 255, 255),
+                        2
+                    )
                     time.sleep(1.0 / max(1, config.camera.fps))
 
                 h, w = frame.shape[:2]
 
-                # 1. Suy luận AI với TensorRT FP16 trên GPU Orin Nano
+                # 1. Suy luận AI với YOLOv8 (Apple Silicon MPS / CPU)
                 detections = self.detection_callback.process(frame, w, h)
 
-                # 2. Thu nhận nhiệt độ & Cross-modal Verification
-                thermal_frame = self.thermal_pipeline.process()
-                detections = self.thermal_callback.process(
-                    detections,
-                    thermal_frame,
-                    w,
-                    h
-                )
+                # 2. Xử lý thân nhiệt (nếu bật cảm biến hoặc mock)
+                thermal_frame = None
+                if config.thermal.enable:
+                    thermal_frame = self.thermal_pipeline.process()
+                    detections = self.thermal_callback.process(
+                        detections,
+                        thermal_frame,
+                        w,
+                        h
+                    )
 
                 # 3. Tracking & Tính điểm ưu tiên SAR
                 detections = self.tracker.update(detections)
@@ -165,10 +159,10 @@ class DetectionPipeline:
 
                 # 4. Tạo heatmap nếu có dữ liệu nhiệt
                 heatmap = None
-                if thermal_frame is not None:
+                if thermal_frame is not None and config.thermal.enable:
                     heatmap = self.thermal_pipeline.generate_heatmap()
 
-                # 5. Đẩy sang Ring Queue không đồng bộ (Không khóa luồng suy luận)
+                # 5. Đẩy sang Ring Queue không đồng bộ
                 self.context.push_inference_result(frame, detections, fps, heatmap)
 
         except KeyboardInterrupt:
@@ -177,7 +171,7 @@ class DetectionPipeline:
             self.stop()
 
     def _render_worker_loop(self):
-        """Luồng chuyên trách render đồ họa và phát video qua mạng, không chặn GPU AI."""
+        """Luồng render đồ họa và phát MJPEG qua mạng độc lập."""
         while self.context.running:
             task = self.context.get_render_task(timeout=0.05)
             if task is None:
@@ -196,9 +190,16 @@ class DetectionPipeline:
                 self.stop()
 
     def stop(self):
-        logger.info("Stopping SAR Jetson Pipeline...")
+        logger.info("Stopping SAR Pipeline on macOS...")
         self._running = False
         self.context.running = False
+
+        if self.camera_source is not None:
+            try:
+                self.camera_source.stop()
+            except Exception:
+                pass
+            self.camera_source = None
 
         if self.cap is not None:
             try:
@@ -222,4 +223,4 @@ class DetectionPipeline:
         except Exception as e:
             logger.warning(f"Error closing display: {e}")
 
-        logger.info("Jetson pipeline stopped cleanly.")
+        logger.info("macOS pipeline stopped cleanly.")

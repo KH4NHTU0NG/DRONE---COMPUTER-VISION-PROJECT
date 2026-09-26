@@ -9,6 +9,7 @@ có màn hình. Video vẫn xem qua MJPEG stream.
 from __future__ import annotations
 
 import os
+import sys
 
 import cv2
 
@@ -28,12 +29,15 @@ class DisplayManager:
         self._resized = False
         self._fullscreen = False
 
-        self.headless = not os.environ.get("DISPLAY")
+        if sys.platform == "darwin":
+            self.headless = os.environ.get("HEADLESS", "0").lower() in ("1", "true", "yes")
+        else:
+            self.headless = not os.environ.get("DISPLAY")
 
         if self.headless:
             logger.info(
-                "Không phát hiện màn hình (DISPLAY trống) -> chạy headless. "
-                "Xem video qua MJPEG stream (http://<IP-Pi>:5000)."
+                "Chạy chế độ headless (không mở cửa sổ GUI trực tiếp). "
+                "Xem video qua MJPEG stream (http://localhost:5000)."
             )
         else:
             cv2.namedWindow(
