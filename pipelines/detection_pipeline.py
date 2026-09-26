@@ -4,15 +4,15 @@ SAR Detection Pipeline for macOS & Local Inference
 Supports:
 - iPhone Continuity Camera / AVFoundation / IP Video Stream
 - Apple Silicon MPS (Metal Performance Shaders) / CPU YOLOv8
-- MJPEG Web Streaming (http://localhost:5000)
-- Multi-Threaded Asynchronous Ring Queue Architecture
+- Cocoa GUI Rendering on Main Thread (macOS AppKit Compliant)
+- MJPEG Web Streaming (http://localhost:5001)
 =========================================================
 """
 
 import sys
 import threading
 import time
-from typing import Optional, Union
+from typing import Optional
 import cv2
 import numpy as np
 
@@ -53,17 +53,9 @@ class DetectionPipeline:
         if config.display.fullscreen:
             self.display.toggle_fullscreen()
 
-        port = getattr(config.performance, "stream_port", 5000)
+        port = getattr(config.performance, "stream_port", 5001)
         self.stream_server = StreamServer(port=port)
         self.stream_server.start()
-
-        # Khởi chạy luồng render & web stream độc lập
-        self._worker_thread = threading.Thread(
-            target=self._render_worker_loop,
-            name="RenderWorkerThread",
-            daemon=True
-        )
-        self._worker_thread.start()
 
     def _open_camera(self) -> bool:
         backend = config.camera.backend.lower()
@@ -162,32 +154,28 @@ class DetectionPipeline:
                 if thermal_frame is not None and config.thermal.enable:
                     heatmap = self.thermal_pipeline.generate_heatmap()
 
-                # 5. Đẩy sang Ring Queue không đồng bộ
+                # 5. Render đồ họa & Hiển thị cửa sổ TRỰC TIẾP TRÊN MAIN THREAD
+                # (Bắt buộc theo chuẩn Apple AppKit / Cocoa UI trên macOS)
+                rendered = self.renderer.draw(frame, detections, fps)
+                self.display.show(rendered)
+
+                # 6. Phát luồng Web MJPEG cho trình duyệt qua StreamServer
+                self.stream_server.update(rendered, name="rgb")
+                if heatmap is not None:
+                    self.stream_server.update(heatmap, name="thermal")
+
+                # 7. Kiểm tra sự kiện đóng cửa sổ (phím q hoặc ESC)
+                if self.display.should_close():
+                    logger.info("Window close requested by user. Shutting down...")
+                    break
+
+                # 8. Cập nhật kết quả vào ApplicationContext
                 self.context.push_inference_result(frame, detections, fps, heatmap)
 
         except KeyboardInterrupt:
             logger.info("Interrupted by user. Shutting down...")
         finally:
             self.stop()
-
-    def _render_worker_loop(self):
-        """Luồng render đồ họa và phát MJPEG qua mạng độc lập."""
-        while self.context.running:
-            task = self.context.get_render_task(timeout=0.05)
-            if task is None:
-                continue
-
-            frame, detections, fps, heatmap = task
-            if frame is not None:
-                rendered = self.renderer.draw(frame, detections, fps)
-                self.display.show(rendered)
-                self.stream_server.update(rendered, name="rgb")
-
-            if heatmap is not None:
-                self.stream_server.update(heatmap, name="thermal")
-
-            if self.display.should_close():
-                self.stop()
 
     def stop(self):
         logger.info("Stopping SAR Pipeline on macOS...")
